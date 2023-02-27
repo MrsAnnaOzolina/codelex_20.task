@@ -1,12 +1,24 @@
 import main from "../../lib/mongo/mongodb"
 import RecipesModel from "@/lib/mongo/schema"
+import type { NextApiRequest, NextApiResponse } from 'next'
+import { runInNewContext } from "vm";
 
-export default function getRecipes (req: Request, res: Response){
 
-    main().catch(err => console.log(err));
+export default function getRecipes (req: NextApiRequest, res: NextApiResponse){
+console.log("my Data", req.query.title?.length)
+main().catch(err => console.log(err));
 
-    const create = new RecipesModel({title:"IceScream", image:"test image", description: "test description", category: "desert"})
-   create.save().then(()=>{
-    res.status(200).json(create)
-   })
+// if(req.query.title?.length === 0){
+
+        RecipesModel.find().then((data)=>{
+            res.status(200).json(data)
+        })
+    // }
+//     else {
+   
+//     RecipesModel.findOne({title: req.query.title }).then((data)=>{
+//     res.status(200).json(data)
+//    })
+
+// }
 }

@@ -11,7 +11,9 @@ const MyRecipes = new Schema({
 
 },{collection: "MyRecipes"})
   
-  const RecipesModel = mongoose.model("MyRecipes") || mongoose.model("MyRecipes",MyRecipes)
+  const RecipesModel = 
+  mongoose.model("MyRecipes") || 
+  mongoose.model("MyRecipes",MyRecipes)
 
   export default RecipesModel
 //   module.exports = RecipesModel

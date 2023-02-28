@@ -1,79 +1,86 @@
-.allRecipes{ 
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(3,400px);
-    gap:30px;
-  }
-  .oneRecipe{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+.allRecipes {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 400px);
+  gap: 30px;
+}
+
+.oneRecipe {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   background-color: rgb(217, 211, 204);
   border-radius: 20px;
-  /* display: flex; */
-  /* justify-items: center; */
-  /* align-items: center; */
+}
 
-  }
-  .button{
-  /* margin-left: 150px; */
-  }
-  .image{
-    border-radius: 20px 20px 0px 0px;
-  }
-  .title{
-    margin-top: 20px;
-  }
-  .text{
-    margin-left: 20px;
-  }
-  .input{
-    width: 1200px;
-  }
-  .page{
-    display: grid;
-   justify-items: center;
-  }
-  .recipedetails{
-    display: grid;
-    justify-items: center;
-    background-color: rgb(217, 211, 204);
-    margin-top: 50px;
-    border-radius: 20px;
-    width: 70vw;
-  }
-  .recipedetailsContainer{
-    display: grid;
-    justify-content: center;
-  }
-  .recipedetailsDescription{
-    margin: 40px;
-  }
-  .recipedetailsDeletesbutton{
-display: flex;
-justify-self: flex-end;
-margin-right: 50px;
-  }
-  .recipedetailsBackButton{
-    display: flex;
-justify-self: flex-start;
-margin-left: 50px;
-margin-top: 50px;
-  }
-  .recipedetailsEditButton{
-    display: flex;
-    justify-self: flex-start;
-    margin-left: 50px;
-  }
-  .recipedetailsImage{
-    border-radius: 20px;
-    margin-top: 30px;
-  }
-  .recipedetailsEditFields{
-    display: grid;
-    justify-items: center;
-    width: 40vw;
-    margin: 30px;
-    background-color: rgb(159, 153, 147);
-    border-radius: 20px;
-    padding: 40px;
-  }
+.image {
+  border-radius: 20px 20px 0px 0px;
+}
+
+.title {
+  margin-top: 20px;
+}
+
+.text {
+  margin-left: 20px;
+}
+
+.input {
+  width: 1200px;
+}
+
+.page {
+  display: grid;
+  justify-items: center;
+}
+
+.recipedetails {
+  display: grid;
+  justify-items: center;
+  background-color: rgb(217, 211, 204);
+  margin-top: 50px;
+  border-radius: 20px;
+  width: 70vw;
+}
+
+.recipedetailsContainer {
+  display: grid;
+  justify-content: center;
+}
+
+.recipedetailsDescription {
+  margin: 40px;
+}
+
+.recipedetailsDeletesbutton {
+  display: flex;
+  justify-self: flex-end;
+  margin-right: 50px;
+}
+
+.recipedetailsBackButton {
+  display: flex;
+  justify-self: flex-start;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.recipedetailsEditButton {
+  display: flex;
+  justify-self: flex-start;
+  margin-left: 50px;
+}
+
+.recipedetailsImage {
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.recipedetailsEditFields {
+  display: grid;
+  justify-items: center;
+  width: 40vw;
+  margin: 30px;
+  background-color: rgb(159, 153, 147);
+  border-radius: 20px;
+  padding: 40px;
+}

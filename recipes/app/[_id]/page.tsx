@@ -15,23 +15,18 @@ type OneRecipe = {
     category: string,
 }
 
-
 async function getData(_id: string): Promise<OneRecipe> {
-
     const res = await axios.get(`http://localhost:3000/api/${_id}`);
-
-
-
     if (!res) {
         throw new Error("Failed to fetch data");
     }
     return res.data;
-
 }
 
 type RecipePageProps = {
     params: { _id: string };
 }
+
 const RecipePage = async ({ params }: RecipePageProps) => {
     const data = await getData(params._id);
 

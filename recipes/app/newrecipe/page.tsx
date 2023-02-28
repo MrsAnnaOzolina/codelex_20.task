@@ -42,10 +42,32 @@ const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
     });
   };
 
+  let notificationText:string;
+
   const handleSaveTodo = (e: React.FormEvent, newRecipeData: OneRecipe | any) => {
     e.preventDefault();
-     const data = postdata(newRecipeData); 
-     router.push('/recipes')
+    if (newRecipeData.title.length < 3 || newRecipeData.title.length > 20 ){
+        alert("Name should contain atleast 3 characters and should be longer then 20 characters")
+      } 
+      else if (!newRecipeData.title.match(/^[A-Za-z]+$/)) {
+        alert("Name should contain letters")
+       }
+       else if (!newRecipeData.image.match(/jpg/) && !newRecipeData.image.match(/png/) && !newRecipeData.image.match(/webp/) && !newRecipeData.image.match(/gif/)) {
+        alert("link doesn't contain jpg, png, webp, gif formats")
+       }  
+       else if (!newRecipeData.image.match(/^(ftp|http|https):\/\/[^ "]+$/)) {
+        alert("not correct format to picture link")
+       }
+       else if (newRecipeData.description.length < 50 || newRecipeData.description.length > 1000 ){
+        alert("Description should contain atleast 50 characters and should be longer then 1000 characters")
+      } 
+      else if (newRecipeData.category.length < 5 || newRecipeData.category.length > 30 ){
+        alert("Category should contain atleast 5 characters and should be longer then 30 characters")
+      } 
+       else {
+        postdata(newRecipeData); 
+        router.push('/recipes')
+       }
   };
 
     return (
@@ -61,7 +83,6 @@ const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
         type="text" 
         placeholder="Recipe - title"
          id="title" 
-        //  value={newRecipeData?.title}
         onChange={handleForm}/>
         <label htmlFor="">Add image </label>
         <input 
@@ -70,6 +91,7 @@ const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
         id="image"
         onChange={handleForm}
         />
+        
         <label htmlFor="">Add recipe and ingredients</label>
         <input 
         type="text"  

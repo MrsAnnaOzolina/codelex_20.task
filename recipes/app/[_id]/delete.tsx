@@ -1,7 +1,7 @@
 "use client"
 import axios from "axios";
 import { useRouter } from 'next/navigation';
-
+import styles from '../recipes/page.module.css'
 
 type OneRecipe = {
     _id:string
@@ -27,13 +27,17 @@ function DeleteRecipe(id: string) {
     const router = useRouter();
 
     return (
+        <div
+        className={styles.recipedetailsDeletesbutton}
+        >
         <button 
-        className="submit success button"
+        className="button alert"
         onClick={()=>{
          deleteRecipe(id); 
          router.push('/recipes')
         }}
         >Delete recipe</button>
+        </div>
     )
   }
 

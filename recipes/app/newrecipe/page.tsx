@@ -49,7 +49,7 @@ const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
     if (newRecipeData.title.length < 3 || newRecipeData.title.length > 20 ){
         alert("Name should contain atleast 3 characters and should be longer then 20 characters")
       } 
-      else if (!newRecipeData.title.match(/^[A-Za-z]+$/)) {
+      else if (!newRecipeData.title.match(/^[A-Za-z]/)) {
         alert("Name should contain letters")
        }
        else if (!newRecipeData.image.match(/jpg/) && !newRecipeData.image.match(/png/) && !newRecipeData.image.match(/webp/) && !newRecipeData.image.match(/gif/)) {

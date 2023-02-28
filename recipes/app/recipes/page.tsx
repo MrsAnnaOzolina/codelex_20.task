@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import Link from "next/link"
 import styles from './page.module.css'
 import Image from 'next/image';
@@ -15,7 +15,7 @@ export interface OneRecipe {
     __v: number,
 }
 
-async function getData(value: string): Promise<OneRecipe[]> {
+async function getData(): Promise<OneRecipe[]> {
     // console.log(value)
     // if (value.length === 0) {
 
@@ -26,9 +26,9 @@ async function getData(value: string): Promise<OneRecipe[]> {
     //     return res.data;
     // } else {
     const res = await axios.get("http://localhost:3000/api/recipes", {
-        params: {
-            title: value
-        }
+        // params: {
+        //     title: value
+        // }
     });
     if (!res) {
         throw new Error("Failed to fetch data");
@@ -38,8 +38,8 @@ async function getData(value: string): Promise<OneRecipe[]> {
 // }
 
 const RecipesPage = async () => {
-    const [searchValue, setSearchValue] = useState("")
-    const data = await getData(searchValue);
+    // const [searchValue, setSearchValue] = useState("")
+    const data = await getData();
     console.log(data)
     return (
         <div className={styles.page}>
@@ -52,12 +52,12 @@ const RecipesPage = async () => {
                     <input
                         type="text"
                         placeholder="search recipe"
-                        onChange={(e) => setSearchValue(e.target.value.trim())}
+                        // onChange={(e) => setSearchValue(e.target.value.trim())}
                     />
                     <button>Search</button>
                 </form>
             </div>
-            <div className={styles.allRecipes}> {data.map(({ _id, title, image, category }) => {
+            <div className={styles.allRecipes}> {data.map(({ _id, title, image, category}) => {
                 return (
                     <div key={_id}>
                         <Image

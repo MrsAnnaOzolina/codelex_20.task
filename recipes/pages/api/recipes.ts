@@ -6,12 +6,13 @@ import { runInNewContext } from "vm";
 
 export default function getRecipes(req: NextApiRequest, res: NextApiResponse) {
     console.log("my Data", req.query.title?.length)
-    if (req.query.title?.length !== 0) {
-        main().catch(err => console.log(err));
-        RecipesModel.find({ title: { $regex: `/${req.query.title}/` } }).then((data) => {
-            res.status(200).json(data)
-        })
-    }
+    main().catch(err => console.log(err));
+    // if (req.query.title?.length !== 0) {
+    //     RecipesModel.find({ title: { $regex: `/${req.query.title}/` } }).then((data) => {
+    //         res.status(200).json(data)
+    //     })
+    // }
+    
     RecipesModel.find().then((data) => {
         res.status(200).json(data)
     })

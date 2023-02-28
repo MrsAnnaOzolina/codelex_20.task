@@ -50,7 +50,7 @@ const RecipePage = async ({ params }: RecipePageProps) => {
             />
             <h1>{data.title}</h1>
             <p className={styles.recipedetailsDescription}>{data.description}</p>
-            <DeleteRecipe _id={data._id}  />
+            <DeleteRecipe id={data._id}  />
         </div>
         </div>
     )

@@ -21,7 +21,7 @@ async function deleteRecipe(id: string): Promise<OneRecipe> {
 
 }
 
-function DeleteRecipe(_id: string) {
+function DeleteRecipe(id: string) {
     const router = useRouter();
 
     return (
@@ -31,7 +31,7 @@ function DeleteRecipe(_id: string) {
             <button
                 className="button alert"
                 onClick={() => {
-                    deleteRecipe(_id);
+                    deleteRecipe(id);
                     router.push('/recipes')
                 }}
             >Delete recipe</button>

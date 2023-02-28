@@ -8,8 +8,7 @@ const MyRecipes = new Schema({
   image: String,
   description: String,
   category: String,
-  __v: Number,
-  _id: String
+
 
 }, { collection: "MyRecipes" })
 
@@ -18,4 +17,4 @@ const RecipesModel =
   mongoose.model("MyRecipes", MyRecipes)
 
 export default RecipesModel
-
+  module.exports = RecipesModel
